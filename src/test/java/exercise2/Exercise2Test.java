@@ -4,6 +4,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -35,7 +36,7 @@ public class Exercise2Test {
 	}
 
 	@Test
-	public void save() throws IOException {
+	public void save() throws IOException  {
 		Classroom classroom = new Classroom(TEACHER, STUDENTS);
 		Exercise2.save(classroom, tempFilePath);
 		assertThat(tempFilePath).exists();
@@ -43,7 +44,7 @@ public class Exercise2Test {
 	}
 
 	@Test
-	public void save_and_load() {
+	public void save_and_load()  throws IOException, ClassNotFoundException{
 		Classroom classroom = new Classroom(TEACHER, STUDENTS);
 		Exercise2.save(classroom, tempFilePath);
 		Classroom loadedClassroom = Exercise2.load(tempFilePath);
